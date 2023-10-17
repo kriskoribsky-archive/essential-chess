@@ -1,0 +1,70 @@
+Pygame reference:
+https://www.pygame.org/news
+https://www.pygame.org/docs/
+https://www.youtube.com/watch?v=jO6qQDNa2UY
+https://riptutorial.com/pygame/example/21726/drawing-shapes--text-and-images-on-the-screen-with-a-small-animation
+https://www.chessprogramming.org/Main_Page
+https://stackoverflow.com/questions/41332861/click-and-drag-a-rectangle-with-pygame
+https://stackoverflow.com/questions/25202092/pil-and-pygame-image
+https://www.chess.com/terms/fen-chess
+https://chess.stackexchange.com/questions/14487/why-is-drag-and-drop-more-popular-than-click-click-in-online-blitz
+
+Links for resources used in this project:
+
+# chess pieces download
+https://commons.wikimedia.org/wiki/Category:PNG_chess_pieces/Standard_transparent
+https://www.pngjoy.com/fullpng/h1f1j4d5g4i2a6/
+
+# tech with tim projects
+https://www.youtube.com/watch?v=jO6qQDNa2UY
+https://github.com/techwithtim/PygameForBeginners
+
+https://www.youtube.com/watch?v=vnd3RfeG3NM&t
+https://github.com/techwithtim/Python-Checkers
+
+# main inspiration
+https://www.youtube.com/watch?v=U4ogK0MIzqk&t
+https://github.com/SebLague/Chess-AI
+
+    # learning resources
+    https://www.chessprogramming.org/Main_Page
+    https://web.archive.org/web/20071026090003/http://www.brucemo.com/compchess/programming/index.htm
+    https://github.com/MartinMSPedersen/Crafty-Chess
+
+# generating moves
+https://peterellisjones.com/posts/generating-legal-chess-moves-efficiently/
+
+Other useful links:
+
+# __init__.py explained
+https://stackoverflow.com/questions/448271/what-is-init-py-for
+http://python-notes.curiousefficiency.org/en/latest/python_concepts/import_traps.html
+
+# Pillow (python imaging library) = PIL
+https://pillow.readthedocs.io/en/stable/reference/Image.html
+
+# __repr__ class method
+https://www.educative.io/edpresso/what-is-the-repr-method-in-python
+
+# best way to order methods in classes
+https://stackoverflow.com/questions/10289461/what-is-a-good-way-to-order-methods-in-a-python-class/36967648
+
+# dictionaries
+https://www.w3schools.com/python/python_dictionaries.asp
+
+# how to mix/blend colors programatically in python
+https://stackoverflow.com/questions/61488790/how-can-i-proportionally-mix-colors-in-python
+
+# pygame music not playing (time.sleep() was the solution, 
+    sound didn't play because the program closed immediately after trying to play the music during sounds.py testing, 
+    not in actual main.py file where program countinues looping and sound is playing normally)
+https://stackoverflow.com/questions/2936914/pygame-sounds-dont-play
+
+# pygame working with fonts
+https://pygame.readthedocs.io/en/latest/4_text/text.html
+
+# most efficient way of counting multiple items in an array
+https://stackoverflow.com/questions/2600191/how-can-i-count-the-occurrences-of-a-list-item
+
+# pyinstaller one-file exporting to exe 
+https://stackoverflow.com/questions/7674790/bundling-data-files-with-pyinstaller-onefile

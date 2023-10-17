@@ -1,0 +1,114 @@
+------------------------
+Essential Chess
+------------------------
+# chess game project
+
+start date:                 1.5.2021
+finish date (releases):     1.9.2021 (aplha realease)
+                                1.9.2021 release notes:
+                                    -first game release
+                                    -fixed FPS: 144
+                                    -resizable window, scalable objects
+                                    -full legal move generation
+                                    -check mechanics
+                                    -FEN string importer
+                                    -castling
+                                    -en passant, double pawn pushes
+                                    -gameplay only available on one side (white)
+                                    -no checkmate ending
+                                    -move generation not tested for possible erros/bugs !
+                                    -no icon
+                                    -no menu
+                                    -halfmove clock, full move counter not yet implemented (+draw by repetition?)
+                                    ...
+
+
+main python library: pygame
+
+goal:
+-firstly, main goal is to make fully featured, functional chess game with all the rules,
+ later on add some nice looking GUI with variety of custom themes
+-when and if I finish the first goal, I am planning to return to this project to upgrade it with
+ move generation (possibly using AI) and thus enhance it with my own chess engine...
+
+
+
+progression:
+1. create application screen and window
+2. create board background (for the beginning I use simple wooden background for nice looks, planning to add more as well as custom themes)
+3. create playing board (tiles)
+4. implement internal board representation
+5. define class for pieces and their attributes (row, col, type, color, ...)
+6. add function to load from FEN string and create initial playing board that way
+7. function for creating rectangle for every piece in internal board representation
+8. draw pieces on playing board (then on screen) according to coordinates of respective rectangles
+9. add mouse click detection when clicked on pygame rectangle (piece representation)
+10. handle movement of pieces (2 movement methods: drag-and-drop / click-click)
+11. the last, most difficult part - the implementation of game logic and rules
+    a)
+    b)
+    c)
+    d)
+
+
+to do: (using this as a remainder for coding session transitions)
+18.5 - fix bug occuring when resizing window and the pieces won't resize correctly (Piece class not updating tile_size bug)
+23.5 - complete handling of movement (add graphical piece selection, square aim border and movement in general)
+17.8 - adjust and try different borders of the playing board
+     - start making progress toward handling only legal moves
+20.8 - add row and col coordinates for better orientation
+
+
+
+
+
+issues in making:
+1. a surface renders on screen with blit() method, so in order to display
+    drawn rectangles you need to call blit(), otherwise the drawn objects
+    won't show on the screen (they will still be there)
+2. I was unable to load image from PIL with pygame.image.open method but I found
+    this post very helpful: https://stackoverflow.com/questions/25202092/pil-and-pygame-image
+3. During sounds.py testing, the sound wouldn't play because the program closed immediately after trying to play the music during sounds.py testing, 
+    note: in actual main.py file it works perfectly because program countinues looping and sound is played normally
+    helpful post: https://stackoverflow.com/questions/2936914/pygame-sounds-dont-play
+4. When loosing focus of the application window, upon reentering the background assets of the app weren't updated on the screen
+    fixed this implementing event.type == pygame.WINDOWFOCUSGAINED (the screen is updated over again upon refocusing on the window)
+5. Error when user clicked on play new game (after checkmate/stalemate), previously in this function this sequence of commands were used: 
+
+            pygame.quit()
+            GameWindow().run()
+    
+    which resulted in everything loading up nicely  when trying to resize the newly created window it wouldn't register it as pygame.event.VIDEORESIZE
+    fix: using pygame.display.quit() -> unitialize only display module, instead of pygame.quit() - > which uninitialized all pygame modules
+
+    I don't know why this error occured
+
+
+
+parameters:
+screen size = 1280x720 on 1920x1080 (Full HD) resolution screen (dynamic screen size according to device resolution)
+default dynamic screen size multiplier = 2/3
+
+
+graphical resources:
+-different colors of board tiles were made using GIMP - version 2.10.22 (https://www.gimp.org/)
+-chess pieces were downloaded online from https://commons.wikimedia.org/wiki/Category:PNG_chess_pieces/Standard_transparent
+    there is the only one piece theme now -> standard (planning to add more in future)
+-for image manipulation (resizing, cropping) Pillow (PIL) library is used
+
+sounds:
+-sounds for this app were created by the author using mobile phone recorder and different chess pieces (rook and pawn)
+-there are also better alternatives available downloaded from: https://github.com/ornicar/lila/tree/master/public/sound/standard (Lichess.org - open source chess server)
+
+possible optimalizations:
+-there may be more efficient method for converting regular surface to surface with aplha transparency (currently using surface.convert_aplha() method)
+
+chess file and rank coordinate system:
+-the vertical columns of squares, called files, are labeled a through h from White's left (the queenside) to right (the kingside) 
+-the horizontal rows of squares, called ranks, are numbered 1 to 8 starting from White's side of the board
+
+programmatical coordinate system:
+-internal board representation (board_repr) is indexed in format (row, col) always starting from the top-left of the object
+
+graphical board elements:
+-inspired by a nice looking design: https://lichess.org/
